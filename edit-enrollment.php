@@ -32,11 +32,12 @@ $available_courses = $conn->prepare("
     FROM courses_offered co
     WHERE co.fld_indx_courses NOT IN (
         SELECT course_code FROM courses_enrolled 
-        WHERE std_number = ? AND fld_indx_enrolled != ?
+        WHERE std_number = ?
     )
+    AND co.fld_indx_courses != ?
     ORDER BY co.course_code
 ");
-$available_courses->bind_param("ii", $logic_data['std_number'], $enrollment_id);
+$available_courses->bind_param("ii", $logic_data['std_number'], $logic_data['course_code']);
 $available_courses->execute();
 $courses_result = $available_courses->get_result();
 
