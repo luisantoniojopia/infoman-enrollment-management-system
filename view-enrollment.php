@@ -59,11 +59,17 @@ $enrollment = $result->fetch_assoc();
         <div class="form-actions">
             <form method="get" action="edit-enrollment.php" style="display:inline;">
                 <input type="hidden" name="id" value="<?= $enrollment['fld_indx_enrolled'] ?>">
-                <button type="submit" class="btn btn-green">Edit Enrollment</button>
+                <button type="submit" class="btn btn-green" 
+                        onclick="return confirm('Are you sure you want to edit enrollment for <?= htmlspecialchars($enrollment['std_number']) ?>: <?= htmlspecialchars($enrollment['std_last_name']) ?>, <?= htmlspecialchars($enrollment['std_first_name']) ?> in <?= htmlspecialchars($enrollment['course_code']) ?> (ID: <?= $enrollment['fld_indx_enrolled'] ?>)?')">
+                    Edit Enrollment
+                </button>
             </form>
             <form method="post" action="delete-enrollment.php" style="display:inline;">
                 <input type="hidden" name="id" value="<?= $enrollment['fld_indx_enrolled'] ?>">
-                <button type="submit" class="btn btn-red" onclick="return confirm('Are you sure you want to delete this enrollment?')">Delete Enrollment</button>
+                <button type="submit" class="btn btn-red" 
+                        onclick="return confirm('Are you sure you want to PERMANENTLY DELETE enrollment for <?= htmlspecialchars($enrollment['std_number']) ?>: <?= htmlspecialchars($enrollment['std_last_name']) ?>, <?= htmlspecialchars($enrollment['std_first_name']) ?> in <?= htmlspecialchars($enrollment['course_code']) ?> (ID: <?= $enrollment['fld_indx_enrolled'] ?>)?\n\nThis action cannot be undone!')">
+                    Delete Enrollment
+                </button>
             </form>
         </div>
     </div>
