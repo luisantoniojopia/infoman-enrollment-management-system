@@ -6,6 +6,7 @@
             <li><a href="index.php?page=students">Students</a></li>
             <li><a href="index.php?page=courses">Courses</a></li>
             <li><a href="index.php?page=enrollments">Enrollments 1</a></li>
+            <li><a href="index.php?page=enrollments2">Enrollments 2</a></li>
             <li><a href="index.php?page=classes">Classes</a></li>
         </ul>
     </div>
