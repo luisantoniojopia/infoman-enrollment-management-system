@@ -13,16 +13,16 @@ if (isset($_GET['page'])) {
         case 'courses':
             include 'course-list.php';
             break;
-	case 'enrollments':
-	    include 'enrollment-list.php';
-	    break;
-    case 'enrollments2':
-        include 'enrollment2-list.php';
-        break;
-	case 'classes':
-	    include 'class-list.php';
-	    break;
-        // Add more pages as needed
+        case 'enrollments':
+            include 'enrollment-list.php';
+            break;
+        case 'enrollments2':
+            include 'enrollment2-list.php';
+            break;
+        case 'classes':
+            include 'class-list.php';
+            break;
+            // Add more pages as needed
         default:
             echo "<p>Welcome to the Enrollment Management System. Use the sidebar to navigate.</p>";
     }
