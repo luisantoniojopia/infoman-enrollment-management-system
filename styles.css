@@ -190,6 +190,18 @@ th, td {
     padding: 10px 5px !important;
 }
 
+.tb-data-number-num-courses {
+    width: 300px; 
+    text-align: center;
+    padding: 10px 5px !important;
+}
+
+.tb-data-content-center {
+    width: 300px;
+    text-align: center;
+    padding: 10px 5px !important;
+}
+
 td.action-cell {
     text-align: center;
     padding: 8px 5px;
