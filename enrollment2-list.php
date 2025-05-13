@@ -74,7 +74,7 @@ $result = $stmt->get_result();
         </form>
     </div>
     <div class="add-student-container">
-        <a href="add-enrollment.php"><button class="btn btn-green">Add Enrollment</button></a>
+        <a href="add-enrollment2.php"><button class="btn btn-green">Add Enrollment</button></a>
     </div>
 </div>
 
