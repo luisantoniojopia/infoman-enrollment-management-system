@@ -43,6 +43,7 @@ $courses_result = $courses_stmt->get_result();
     </div>
 
     <div class="form-container">
+        <h3>Enrolled Courses</h3><br>
         <div class="view-details">
             <div class="detail-row">
                 <span class="detail-label">Student Number:</span>
@@ -55,7 +56,6 @@ $courses_result = $courses_stmt->get_result();
         </div>
 
         <div class="enrolled-courses">
-            <h3>Enrolled Courses</h3>
             <table class="courses-table">
                 <thead>
                     <tr>
