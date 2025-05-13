@@ -79,7 +79,7 @@ $courses_result = $courses_stmt->get_result();
                                 <td><?= htmlspecialchars($course['course_name']) ?></td>
                                 <td><?= $course['course_units'] ?></td>
                                 <td>
-                                    <a href="view-course-enrollment.php?id=<?= $course['enrollment_id'] ?>" class="btn btn-gray">View</a>
+                                    <a href="view-enrollment2-per-course.php?id=<?= $course['enrollment_id'] ?>" class="btn btn-gray">View</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
