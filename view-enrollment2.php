@@ -38,7 +38,7 @@ $courses_result = $courses_stmt->get_result();
 
 <div class="content">
     <div class="form-header">
-        <h2>Student Course Enrollments</h2>
+        <h2>Student Enrollment</h2>
         <a href="index.php?page=enrollments2" class="btn btn-gray">Back</a>
     </div>
 
