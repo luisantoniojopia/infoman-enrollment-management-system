@@ -16,6 +16,9 @@ if (isset($_GET['page'])) {
 	case 'enrollments':
 	    include 'enrollment-list.php';
 	    break;
+    case 'enrollments2':
+        include 'enrollments2-list.php';
+        break;
 	case 'classes':
 	    include 'class-list.php';
 	    break;
