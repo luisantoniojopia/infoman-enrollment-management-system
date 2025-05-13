@@ -43,7 +43,7 @@ if (!empty($searchTerm)) {
 }
 
 // Add sorting
-$query .= " ORDER BY sl.std_number ASC";
+$query .= " ORDER BY sl.fld_indx_std";
 
 // Prepare and execute query
 $stmt = $conn->prepare($query);
@@ -97,9 +97,9 @@ $result = $stmt->get_result();
                 <td><?= htmlspecialchars($row['std_number']) ?></td>
                 <td><?= htmlspecialchars($row['std_last_name']) ?>, <?= htmlspecialchars($row['std_first_name']) ?></td>
                 <td class="tb-data-number-num-courses"><?= $row['courses_enrolled'] ?></td>
-                <td class="tb-data-content-center"><?= $row['status'] ?></td>
+                <td class="tb-data-status"><?= $row['status'] ?></td>
                 <td class="action-cell">
-                    <a href="view-student-enrollments.php?id=<?= $row['student_id'] ?>" class="btn btn-gray">View</a>
+                    <a href="view-enrollment2.php?id=<?= $row['student_id'] ?>" class="btn btn-gray">View</a>
                 </td>
             </tr>
         <?php endwhile; ?>
