@@ -89,7 +89,7 @@ $courses_result = $courses_stmt->get_result();
         </div>
 
         <div class="form-actions">
-            <a href="add-enrollment.php?student_id=<?= $student_id ?>" class="btn btn-green">Add Course</a>
+            <a href="add-enrollment2.php?student_id=<?= $student_id ?>" class="btn btn-green">Add Course</a>
         </div>
     </div>
 </div>
