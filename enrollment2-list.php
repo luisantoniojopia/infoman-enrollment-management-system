@@ -62,7 +62,7 @@ if (!$stmt->execute()) {
 $result = $stmt->get_result();
 ?>
 
-<h2>Student Enrollments</h2>
+<h2>Enrollment List</h2>
 
 <div class="header">
     <div class="search-container">
