@@ -67,7 +67,7 @@ $result = $stmt->get_result();
 <div class="header">
     <div class="search-container">
         <form method="get">
-            <input type="hidden" name="page" value="enrollments">
+            <input type="hidden" name="page" value="enrollments2">
             <input type="text" name="search" placeholder="Search by student..." 
                    value="<?= htmlspecialchars($searchTerm) ?>">
             <button type="submit" class="btn btn-gray">Search</button>
