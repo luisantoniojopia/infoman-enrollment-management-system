@@ -12,7 +12,7 @@ $query = "SELECT
             sl.std_first_name,
             COUNT(ce.fld_indx_enrolled) AS courses_enrolled,
             CASE 
-                WHEN COUNT(ce.fld_indx_enrolled) >= 5 THEN 'Full Load'
+                WHEN COUNT(ce.fld_indx_enrolled) = 9 THEN 'Full Load'
                 WHEN COUNT(ce.fld_indx_enrolled) > 0 THEN 'Partial Load'
                 ELSE 'Not Enrolled'
             END AS status
@@ -29,7 +29,7 @@ if (!empty($searchTerm)) {
                 sl.std_first_name,
                 COUNT(ce.fld_indx_enrolled) AS courses_enrolled,
                 CASE 
-                    WHEN COUNT(ce.fld_indx_enrolled) >= 5 THEN 'Full Load'
+                    WHEN COUNT(ce.fld_indx_enrolled) = 9 THEN 'Full Load'
                     WHEN COUNT(ce.fld_indx_enrolled) > 0 THEN 'Partial Load'
                     ELSE 'Not Enrolled'
                 END AS status
