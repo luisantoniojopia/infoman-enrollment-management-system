@@ -59,8 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- HTML Form -->
 <div class="content">
     <div class="form-header">
-        <h2>Edit Course Enrollment</h2>
-        <a href="view-enrollment2.php?id=<?= $enrollment_id ?>" class="btn btn-gray">Back</a>
+        <h2>edit-enrollment2</h2>
+        <?php $student_id = $display_data['std_number'];?>
+        <a href="view-enrollment2.php?id=<?php echo $student_id; ?>" class="btn btn-gray">Back</a>
     </div>
 
     <div class="form-container">

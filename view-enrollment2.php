@@ -8,6 +8,7 @@ if (!isset($_GET['id'])) {
 }
 
 $student_id = intval($_GET['id']);
+$from_search = $_GET['from_search'] ?? '';
 
 // Get student basic info
 $student_stmt = $conn->prepare("SELECT std_number, std_last_name, std_first_name 
@@ -38,8 +39,8 @@ $courses_result = $courses_stmt->get_result();
 
 <div class="content">
     <div class="form-header">
-        <h2>Student Enrollment</h2>
-        <a href="index.php?page=enrollments2" class="btn btn-gray">Back</a>
+        <h2>view-enrollment2</h2>
+        <a href="index.php?page=enrollments2<?php echo isset($_GET['from_search']) ? '?search='.urlencode($_GET['from_search']) : ''; ?>" class="btn btn-gray">Back</a>
     </div>
 
     <div class="form-container">

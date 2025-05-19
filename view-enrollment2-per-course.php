@@ -32,8 +32,9 @@ $enrollment = $result->fetch_assoc();
 
 <div class="content">
     <div class="form-header">
-        <h2>View Enrollment Details</h2>
-        <a href="view-enrollment2.php?id=<?php echo $enrollment_id; ?>" class="btn btn-gray">Back</a>
+        <h2>view-enrollment2-per-course</h2>
+        <?php $student_id = $enrollment['std_number'];?>
+        <a href="view-enrollment2.php?id=<?php echo $student_id; ?>" class="btn btn-gray">Back</a>
     </div>
 
     <div class="form-container">

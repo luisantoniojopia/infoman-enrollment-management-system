@@ -71,7 +71,7 @@ function getAvailableCourses($conn, $std_number) {
 
 <div class="content">
     <div class="form-header">
-        <h2>Add New Enrollment</h2>
+        <h2>add-enrollment2</h2>
         <a href="index.php?page=enrollments2" class="btn btn-gray">Back</a>
     </div>
 
