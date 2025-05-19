@@ -33,7 +33,7 @@ $enrollment = $result->fetch_assoc();
 <div class="content">
     <div class="form-header">
         <h2>View Enrollment Details</h2>
-        <a href="index.php?page=enrollments" class="btn btn-gray">Back</a>
+        <a href="view-enrollment2.php?id=<?php echo $enrollment_id; ?>" class="btn btn-gray">Back</a>
     </div>
 
     <div class="form-container">
