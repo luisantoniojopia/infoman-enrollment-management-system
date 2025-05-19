@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $update->bind_param("ii", $new_course_id, $enrollment_id);
     
     if ($update->execute()) {
-        header("Location: view-enrollment.php?id=" . $enrollment_id);
+        header("Location: view-enrollment2-per-course.php?id=" . $enrollment_id);
         exit;
     } else {
         $error = "Error updating enrollment: " . $conn->error;
