@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="form-header">
         <h2>edit-enrollment2</h2>
         <?php $student_id = $display_data['std_number'];?>
-        <a href="view-enrollment2.php?id=<?php echo $student_id; ?>" class="btn btn-gray">Back</a>
+        <a href="view-enrollment2-per-course.php?id=<?= $enrollment_id; ?>" class="btn btn-gray">Back</a>
     </div>
 
     <div class="form-container">
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </button>
                 
                 <button type="button" class="btn btn-gray" 
-                        onclick="if(confirm('Cancel Enrollment Update?\n\nStudent: <?= htmlspecialchars($display_data['std_number']) ?> - <?= htmlspecialchars($display_data['std_last_name']) ?>, <?= htmlspecialchars($display_data['std_first_name']) ?>\nCurrent Course: <?= htmlspecialchars($display_data['course_code']) ?> - <?= htmlspecialchars($display_data['course_name']) ?>\n\nAll changes will be lost.')) { window.location.href='view-enrollment2.php?id=<?= $enrollment_id ?>'; }">
+                    onclick="if(confirm('Cancel Enrollment Update?\n\nStudent: <?= htmlspecialchars($display_data['std_number']) ?> - <?= htmlspecialchars($display_data['std_last_name']) ?>, <?= htmlspecialchars($display_data['std_first_name']) ?>\nCurrent Course: <?= htmlspecialchars($display_data['course_code']) ?> - <?= htmlspecialchars($display_data['course_name']) ?>\n\nAll changes will be lost.')) { window.location.href='view-enrollment2-per-course.php?id=<?= $enrollment_id ?>'; }">
                     Cancel Update
                 </button>
             </div>
