@@ -57,7 +57,7 @@ $enrollment = $result->fetch_assoc();
         </div>
 
         <div class="form-actions">
-            <form method="get" action="edit-enrollment.php" style="display:inline;">
+            <form method="get" action="edit-enrollment2.php" style="display:inline;">
                 <input type="hidden" name="id" value="<?= $enrollment['fld_indx_enrolled'] ?>">
                 <button type="submit" class="btn btn-green" 
                         onclick="return confirm('Are you sure you want to edit enrollment for <?= htmlspecialchars($enrollment['std_number']) ?>: <?= htmlspecialchars($enrollment['std_last_name']) ?>, <?= htmlspecialchars($enrollment['std_first_name']) ?> in <?= htmlspecialchars($enrollment['course_code']) ?> (ID: <?= $enrollment['fld_indx_enrolled'] ?>)?')">
