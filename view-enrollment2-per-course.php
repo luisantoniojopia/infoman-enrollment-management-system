@@ -14,7 +14,7 @@ $student_id = 0;
 // Debug output (remove after testing)
 echo "<!-- Debug: Received ID: ".$enrollment_id." -->";
 
-$stmt = $conn->prepare("SELECT ce.*, sl.std_number, sl.std_last_name, sl.std_first_name,
+$stmt = $conn->prepare("SELECT ce.*, sl.fld_indx_std, sl.std_number, sl.std_last_name, sl.std_first_name,
                        co.course_code, co.course_name 
                        FROM courses_enrolled ce
                        JOIN students_list sl ON ce.std_number = sl.fld_indx_std
@@ -75,13 +75,30 @@ if ($row = $result->fetch_assoc()) {
                     Edit Enrollment
                 </button>
             </form>
-            <form method="post" action="delete-enrollment.php" style="display:inline;">
-                <input type="hidden" name="id" value="<?= $enrollment['fld_indx_enrolled'] ?>">
-                <button type="submit" class="btn btn-red" 
-                        onclick="return confirm('Are you sure you want to PERMANENTLY DELETE enrollment for <?= htmlspecialchars($enrollment['std_number']) ?>: <?= htmlspecialchars($enrollment['std_last_name']) ?>, <?= htmlspecialchars($enrollment['std_first_name']) ?> in <?= htmlspecialchars($enrollment['course_code']) ?> (ID: <?= $enrollment['fld_indx_enrolled'] ?>)?\n\nThis action cannot be undone!')">
-                    Delete Enrollment
-                </button>
+            <form method="post" action="delete-enrollment2.php" 
+                onsubmit="return confirmDeletion(<?= htmlspecialchars(json_encode([
+                    'std_number' => $enrollment['std_number'],
+                    'std_name' => $enrollment['std_last_name'].', '.$enrollment['std_first_name'],
+                    'course_code' => $enrollment['course_code'],
+                    'enrollment_id' => $enrollment['fld_indx_enrolled']
+                ]), ENT_QUOTES, 'UTF-8') ?>)">
+                <input type="hidden" name="enrollment_id" value="<?= $enrollment['fld_indx_enrolled'] ?>">
+                <!-- Use fld_indx_std instead of std_number for the student ID -->
+                <input type="hidden" name="student_id" value="<?= $enrollment['fld_indx_std'] ?>">
+                <input type="hidden" name="redirect_url" value="view-enrollment2.php?id=<?= $enrollment['fld_indx_std'] ?>">
+                <button type="submit" class="btn btn-red">Delete Enrollment</button>
             </form>
         </div>
     </div>
 </div>
+
+<script>
+function confirmDeletion(data) {
+    const message = `Are you sure you want to PERMANENTLY DELETE enrollment?\n\n` +
+                   `Student: ${data.std_number} - ${data.std_name}\n` +
+                   `Course: ${data.course_code}\n` +
+                   `Enrollment ID: ${data.enrollment_id}\n\n` +
+                   `This action cannot be undone!`;
+    return confirm(message);
+}
+</script>
