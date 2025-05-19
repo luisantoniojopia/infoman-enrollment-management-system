@@ -9,6 +9,7 @@ if (!isset($_GET['id'])) {
 }
 
 $enrollment_id = intval($_GET['id']); // Convert to integer for safety
+$student_id = 0;
 
 // Debug output (remove after testing)
 echo "<!-- Debug: Received ID: ".$enrollment_id." -->";
@@ -28,13 +29,22 @@ if ($result->num_rows == 0) {
 }
 
 $enrollment = $result->fetch_assoc();
+
+// Get the corresponding student ID from the enrollment ID
+$stmt = $conn->prepare("SELECT std_number FROM courses_enrolled WHERE fld_indx_enrolled = ?");
+$stmt->bind_param("i", $enrollment_id);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($row = $result->fetch_assoc()) {
+    $student_id = $row['std_number'];
+}
+
 ?>
 
 <div class="content">
     <div class="form-header">
         <h2>view-enrollment2-per-course</h2>
-        <?php $student_id = $enrollment['std_number'];?>
-        <a href="view-enrollment2.php?id=<?php echo $student_id; ?>" class="btn btn-gray">Back</a>
+        <a href="view-enrollment2.php?id=<?= $student_id ?>" class="btn btn-gray">Back</a>
     </div>
 
     <div class="form-container">
