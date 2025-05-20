@@ -91,6 +91,9 @@ $courses_result = $courses_stmt->get_result();
 
         <div class="form-actions">
             <a href="add-enrollment2.php?student_id=<?= $student_id ?>" class="btn btn-green">Add Course</a>
+            <a href="pdf-enrollment2-std-crs.php?id=<?= $student_id ?>" class="print-btn" title="Print Enrollment">
+                <i class="fas fa-print"></i>
+            </a>
         </div>
     </div>
 </div>
