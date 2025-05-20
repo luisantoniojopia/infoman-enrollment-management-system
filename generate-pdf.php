@@ -1,5 +1,5 @@
 <?php
-require_once('tcpdf/tcpdf.php');
+require_once('libs/tcpdf/tcpdf.php');
 include('db-connect.php');
 
 // Get search term if exists
