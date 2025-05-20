@@ -75,6 +75,9 @@ $result = $stmt->get_result();
     </div>
     <div class="add-student-container">
         <a href="add-enrollment2.php"><button class="btn btn-green">Add Enrollment</button></a>
+        <a href="generate-pdf.php?search=<?= urlencode($searchTerm) ?>" class="btn btn-blue">
+            <i class="fas fa-print"></i> Print
+        </a>
     </div>
 </div>
 

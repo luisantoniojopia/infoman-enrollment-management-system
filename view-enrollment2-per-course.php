@@ -86,7 +86,7 @@ if ($row = $result->fetch_assoc()) {
                 <!-- Use fld_indx_std instead of std_number for the student ID -->
                 <input type="hidden" name="student_id" value="<?= $enrollment['fld_indx_std'] ?>">
                 <input type="hidden" name="redirect_url" value="view-enrollment2.php?id=<?= $enrollment['fld_indx_std'] ?>">
-                <button type="submit" class="btn btn-red">Delete Enrollment</button>
+                <button type="submit" class="btn btn-red">Drop Enrollment</button>
             </form>
         </div>
     </div>
@@ -94,7 +94,7 @@ if ($row = $result->fetch_assoc()) {
 
 <script>
 function confirmDeletion(data) {
-    const message = `Are you sure you want to PERMANENTLY DELETE enrollment?\n\n` +
+    const message = `Are you sure you want to PERMANENTLY DROP enrollment?\n\n` +
                    `Student: ${data.std_number} - ${data.std_name}\n` +
                    `Course: ${data.course_code}\n` +
                    `Enrollment ID: ${data.enrollment_id}\n\n` +
