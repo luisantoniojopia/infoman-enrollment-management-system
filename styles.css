@@ -129,6 +129,7 @@ body {
 .add-student-container {
     display: flex;
     align-items: center;
+    gap: 10px;
     justify-content: flex-end;
 }
 
@@ -300,6 +301,30 @@ input, button {
     background-color: #e13c3c;
 }
 
+.print-btn {
+    background-color: #6c757d; /* Matching your gray button color */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; 
+    width: 40px; 
+    transition: background-color 0.3s ease;
+}
+
+.print-btn:hover {
+    background-color: #5a6268; 
+    text-decoration: none;
+}
+
+.print-btn i {
+    font-size: 16px; 
+    margin: 0; 
+}
+
 /* Form Styles */
 .form-header {
     display: flex;
@@ -444,25 +469,6 @@ input, button {
     border-left: 4px solid #4caf50;
     color: #2e7d32;
     border-radius: 4px;
-}
-
-/* Blue button */
-.btn-blue {
-    background-color: #3498db;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-}
-
-.btn-blue:hover {
-    background-color: #2980b9;
-}
-
-.btn-blue i {
-    margin-right: 5px;
 }
 
 /* Message styles */
